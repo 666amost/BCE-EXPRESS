@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 224 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.tracking-progress {
+  position: relative;
+  height: 6px;
+  @apply bg-muted rounded-full;
+  margin: 20px 0;
+}
+
+.tracking-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  @apply bg-primary rounded-full;
+  transition: width 0.3s ease;
+}
+
+.status-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  transform: translateX(-50%);
+}
+
+.status-dot.active {
+  @apply bg-primary border-2 border-primary/20;
+}
+
+.status-dot.inactive {
+  @apply bg-muted-foreground/30;
+}
+
+.photo-preview {
+  transition: all 0.3s ease;
+}
+
+.photo-preview:hover {
+  transform: scale(1.05);
+}
